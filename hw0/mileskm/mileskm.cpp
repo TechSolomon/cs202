@@ -9,9 +9,11 @@ using std::cout;
 using std::endl;
 using std::cin;
 
+// Printed output for unit conversion direction.
 void instructions() {
     cout << "Welcome to unit conversions!" << endl;
     cout << "––––––––––––––––––––––––––––" << endl;
+    cout << ">> [Press 0] Quit the program." << endl;
     cout << ">> [Press 1] For miles --> kilometers." << endl;
     cout << ">> [Press 2] For kilometers --> miles." << endl;
     cout << "––––––––––––––––––––––––––––––––––––––" << endl;
@@ -23,15 +25,16 @@ int main() {
     int units = 0;
 
     instructions();
-
     cout << "Unit conversion selection: ";
     cin >> units;
 
     switch (units) {
+    
     case 0:
         cout << "The program has ended." << endl;
         break;
 
+    // Converts from miles to kilometers.
     case 1:
         cout << "Enter the number of miles: ";
         cin >> mile;
@@ -52,6 +55,7 @@ int main() {
 
         break;
 
+    // Converts from kilometers to miles.
     case 2:
         cout << "Enter the number of kilometers: ";
         cin >> km;
@@ -72,6 +76,7 @@ int main() {
 
         break;
     
+    // Catch errors during user inptut.
     default:
         cout << "ERROR: Please try another selection." << endl;
         break;
