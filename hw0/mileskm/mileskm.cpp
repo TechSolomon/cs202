@@ -11,29 +11,69 @@ using std::cin;
 
 void instructions() {
     cout << "Welcome to unit conversions!" << endl;
-    cout << "Press 1 for miles --> kilometers." << endl;
-    cout << "Press 2 for kilometers --> miles.\n" << endl;
+    cout << "––––––––––––––––––––––––––––" << endl;
+    cout << ">> [Press 1] For miles --> kilometers." << endl;
+    cout << ">> [Press 2] For kilometers --> miles." << endl;
+    cout << "––––––––––––––––––––––––––––––––––––––" << endl;
 }
 
 int main() {
-    float miles, kilometers;
+    float mile = 0.0;
+    float km = 0.0;
+    int units = 0;
 
     instructions();
 
-    cout << "Enter the number of miles: ";
-    cin >> miles;
+    cout << "Unit conversion selection: ";
+    cin >> units;
 
-    kilometers = miles * 1.609;
+    switch (units) {
+    case 0:
+        cout << "The program has ended." << endl;
+        break;
 
-    if (miles == 1) {
-        cout << miles << " mile is equal to " << kilometers << " kilometers." << endl; 
-    }
+    case 1:
+        cout << "Enter the number of miles: ";
+        cin >> mile;
 
-    else if (miles < 0) {
-        cout << "Please enter a positive value for miles and try again." << endl;
-    }
+        km = mile * 1.609;
 
-    else {
-        cout << miles << " miles is equal to " << kilometers << " kilometers." << endl; 
+        if (mile == 1) {
+            cout << mile << " mile is equal to " << km << " kilometers." << endl; 
+        }
+
+        else if (mile < 0) {
+            cout << "Please enter a positive value of miles and try again." << endl;
+        }
+
+        else {
+            cout << mile << " miles is equal to " << km << " kilometers." << endl; 
+        }
+
+        break;
+
+    case 2:
+        cout << "Enter the number of kilometers: ";
+        cin >> km;
+
+        mile = km / 1.609;
+
+        if (km == 1) {
+            cout << km << " kilometer is equal to " << mile << " miles." << endl; 
+        }
+
+        else if (km < 0) {
+            cout << "Please enter a positive value of kilometers and try again." << endl;
+        }
+
+        else {
+            cout << km << " kilometers is equal to " << mile << " miles." << endl; 
+        }
+
+        break;
+    
+    default:
+        cout << "ERROR: Please try another selection." << endl;
+        break;
     }
 }
