@@ -9,8 +9,16 @@ using std::cout;
 using std::endl;
 using std::cin;
 
+void instructions() {
+    cout << "Welcome to unit conversions!" << endl;
+    cout << "Press 1 for miles --> kilometers." << endl;
+    cout << "Press 2 for kilometers --> miles.\n" << endl;
+}
+
 int main() {
     float miles, kilometers;
+
+    instructions();
 
     cout << "Enter the number of miles: ";
     cin >> miles;
