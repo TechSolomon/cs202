@@ -76,7 +76,7 @@ int main() {
 
         break;
     
-    // Catch errors during user inptut.
+    // Catch errors during user input.
     default:
         cout << "ERROR: Please try another selection." << endl;
         break;
