@@ -4,6 +4,7 @@
 // Time It I example for CS 202.
 // C++ Docs: https://en.cppreference.com/w/cpp/chrono
 
+#include "StopWatch.hpp"
 #include <iostream>
 #include <stdio.h>
 #include <string>
@@ -24,7 +25,9 @@ using std::mt19937;
 using std::random_device;
 using std::uniform_int_distribution;
 
-int main() {
+int main(int argc, const char ** argv) {
+    std::cout << argc << " total arguments, program name is " << argv[0] << "\n";
+
     auto start = std::chrono::system_clock::now();
     auto end = std::chrono::system_clock::now();
 
