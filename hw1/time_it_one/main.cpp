@@ -25,9 +25,7 @@ using std::mt19937;
 using std::random_device;
 using std::uniform_int_distribution;
 
-int main(int argc, const char ** argv) {
-    std::cout << argc << " total arguments, program name is " << argv[0] << "\n";
-
+void timeCalculation() {
     auto start = std::chrono::system_clock::now();
     auto end = std::chrono::system_clock::now();
 
@@ -36,6 +34,12 @@ int main(int argc, const char ** argv) {
 
     std::cout << "Finished computation at " << std::ctime(&end_time)
         << "Elapsed time: " << elapsed_seconds.count() << "s\n";
+}
+
+int main(int argc, const char ** argv) {
+    std::cout << argc << " total argument(s), program name is " << argv[0] << "\n";
+
+    timeCalculation();
 
     cout << "Press ENTER to quit... ";
     while (cin.get() != '\n') ;

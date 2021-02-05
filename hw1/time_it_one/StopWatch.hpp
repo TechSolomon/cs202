@@ -17,9 +17,13 @@ using std::vector;
 
 class StopWatch {
 private:
-    string _name;
+    string _time;
 public:
     StopWatch();
+    std::string getTime() const;
+    void setTime(const string &time);
+    double getTimeInSeconds();
+    double getTimeInMilliseconds();
 };
 
 #endif // TIME_IT_STOPWATCH_HPP

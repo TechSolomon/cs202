@@ -24,7 +24,14 @@ using std::mt19937;
 using std::random_device;
 using std::uniform_int_distribution;
 
-StopWatch::StopWatch():_name("default") {
+StopWatch::StopWatch():_time("default") {
     cout << "Constructed a StopWatch named _default_ via default constructor." << endl;
 }
 
+std::string StopWatch::getTime() const {
+    return _time;
+}
+
+void StopWatch::setTime(const std::string &time) {
+    _time = time;
+}
