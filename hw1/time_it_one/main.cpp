@@ -2,6 +2,7 @@
 // Solomon Himelbloom
 // 28 January 2021
 // Time It I example for CS 202.
+// C++ Docs: https://en.cppreference.com/w/cpp/chrono
 
 #include <iostream>
 #include <stdio.h>
@@ -24,7 +25,14 @@ using std::random_device;
 using std::uniform_int_distribution;
 
 int main() {
-    cout << "Hello, Time It (#1)." << endl;
+    auto start = std::chrono::system_clock::now();
+    auto end = std::chrono::system_clock::now();
+
+    std::chrono::duration<double> elapsed_seconds = (end - start);
+    std::time_t end_time = std::chrono::system_clock::to_time_t(end);
+
+    std::cout << "Finished computation at " << std::ctime(&end_time)
+        << "Elapsed time: " << elapsed_seconds.count() << "s\n";
 
     cout << "Press ENTER to quit... ";
     while (cin.get() != '\n') ;
