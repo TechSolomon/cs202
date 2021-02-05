@@ -4,19 +4,15 @@
 // C-style strings example for CS 202.
 
 #include <iostream>
-#include <string>
-using std::cout;
-using std::endl;
-using std::cin;
-using std::stod;
-using std::strtod;
-using std::string;
 
 int main() {
-    cout << "Hello, C-style strings." << endl;
+    std::cout << "Hello, C-style strings." << std::endl;
 
-    cout << "Press ENTER to quit... ";
-    while (cin.get() != '\n') ;
+    // Copies a C-style string into memory dynamically (using new).
+    char* strdup(const char*);
+
+    // Finds the first occurrence of the C-style string x in s.
+    char* findx(const char* s, const char* x);
 
     return 0;
 }
