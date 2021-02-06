@@ -31,6 +31,9 @@ int main(int argc, const char ** argv) {
     StopWatch exampleInterval;
     exampleInterval.timeCalculation();
 
+    StopWatch algorithmTime;
+    algorithmTime.randomDistribution();
+
     cout << "Press ENTER to quit... ";
     while (cin.get() != '\n') ;
 
