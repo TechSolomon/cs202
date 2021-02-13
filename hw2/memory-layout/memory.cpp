@@ -23,6 +23,15 @@ using std::sort;
 using std::string;
 using std::vector;
 
+void printPointer(int i) {
+    int* iptr = &i;
+    // the unary * operator dereferences the pointer
+    std::cout << "i = " << *iptr << "\n";
+    std::cout << "&i = " << iptr << "\n";
+}
+
 int main() {
-    cout << "Hello, Memory Layout." << endl;
+    printPointer(0);
+    printPointer(42);
+    printPointer(-1337);
 }
