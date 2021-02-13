@@ -3,6 +3,7 @@
 // 9 February 2021
 // Spelunking in C++ example for CS 202.
 
+#include "spelunking.hpp"
 #include <iostream>
 #include <stdio.h>
 #include <string>
@@ -18,11 +19,18 @@ using std::fstream;
 using std::ifstream;
 using std::map;
 using std::ofstream;
+using std::unique_ptr;
+using std::shared_ptr;
+using std::make_unique;
+using std::make_shared;
+using std::move;
 using std::reverse;
 using std::sort;
 using std::string;
 using std::vector;
 
-int main() {
-    cout << "Hello, Spelunking in C++." << endl;
+int main(int argc, const char ** argv) {
+    std::cout << argc << " total arguments, program name is " << argv[0] << "\n";
+
+    cout << "Hello, Spelunking in C++ with classes." << endl;
 }
