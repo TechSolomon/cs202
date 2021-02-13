@@ -4,25 +4,13 @@
 // Lowercase letters example for CS 202.
 
 #include <iostream>
-#include <stdio.h>
-#include <string>
-#include <map>
-#include <vector>
-#include <algorithm>
-#include <fstream>
-#include <iomanip>
-using std::cin;
-using std::cout;
-using std::endl;
-using std::fstream;
-using std::ifstream;
-using std::map;
-using std::ofstream;
-using std::reverse;
-using std::sort;
-using std::string;
-using std::vector;
+
+// Replaces all uppercase characters in the 
+// C-style string 's' with their lowercase equivalents.
+void to_lower(char* s) {
+    
+}
 
 int main() {
-    cout << "Hello, Lower Case Letters." << endl;
+    std::cout << "Hello, Lower Case Letters." << std::endl;
 }
