@@ -34,8 +34,14 @@ using std::vector;
 
 class Box {
 public:
+    Box();
+    Box(int h, int w);
+
     int getHeight() const;
     int getWidth() const;
+
+    void setHeight(int h);
+    void setWidth(int w);
 private:
     int _height;
     int _width;

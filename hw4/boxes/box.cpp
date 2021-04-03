@@ -45,3 +45,19 @@ int Box::getWidth() const {
     cout << "Width = " << _width << endl;
     return 0;
 }
+
+Box::Box() {
+    cout << "Box base constructor!" << endl;
+}
+
+Box::Box(int h, int w) {
+    cout << "Box default constructor!" << endl;
+}
+
+void Box::setHeight(int h) {
+    cout << "Setting the current height." << endl;
+}
+
+void Box::setWidth(int w) {
+    cout << "Setting the current width." << endl;
+}
