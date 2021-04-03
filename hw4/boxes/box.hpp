@@ -4,7 +4,6 @@
 // Box header file example for CS 202.
 
 #include <iostream>
-#include <stdio.h>
 #include <string>
 #include <map>
 #include <vector>
@@ -35,12 +34,11 @@ using std::vector;
 
 class Box {
 public:
-    Box();
-    Box(const Box &);
-    Box(const std::string &name);
-    ~Box();
+    int getHeight() const;
+    int getWidth() const;
 private:
-    std::string _name;
+    int _height;
+    int _width;
 };
 
 class FilledBox : public Box {

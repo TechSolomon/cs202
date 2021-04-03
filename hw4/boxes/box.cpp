@@ -32,22 +32,16 @@ using std::unique_ptr;
 using std::vector;
 
 int main() {
-    std::cout << "Hello, boxes!" << std::endl;
+    cout << "Hello, boxes!" << endl;
     return 0;
 }
 
-Box::Box() {
-
+int Box::getHeight() const {
+    cout << "Height = " << _height << endl;
+    return 0;
 }
 
-Box::Box(const Box &) {
-
-}
-
-Box::Box(const string &name) {
-
-}
-
-Box::~Box() {
-
+int Box::getWidth() const {
+    cout << "Width = " << _width << endl;
+    return 0;
 }
