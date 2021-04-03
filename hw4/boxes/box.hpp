@@ -43,4 +43,19 @@ private:
     std::string _name;
 };
 
+class FilledBox : public Box {
+public:
+private:
+};
+
+class HollowBox : public Box {
+public:
+private:
+};
+
+class CheckeredBox : public Box {
+public:
+private:
+};
+
 #endif //BOXES_BOX_HPP
