@@ -7,8 +7,8 @@
 //
 
 // Includes for code to be tested
-//#include "myreadwrite.hpp"   // For function templates myRead and myWrite
-//#include "myreadwrite.hpp"   // Double inclusion test
+#include "myreadwrite.hpp"   // For function templates myRead and myWrite
+#include "myreadwrite.hpp"   // Double inclusion test
 #include "rational.hpp"      // For Rational class template and opertaors
 #include "rational.hpp"      // Double inclusion test
 

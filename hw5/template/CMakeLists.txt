@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.19)
-project(template)
+project(rational)
 
-set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD 17)
 
-add_executable(template main.cpp)
+add_executable(template rational.cpp rational.hpp myreadwrite.cpp myreadwrite.hpp templateTest.cpp)
