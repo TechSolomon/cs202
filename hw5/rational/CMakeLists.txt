@@ -3,4 +3,4 @@ project(rational)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(rational main.cpp)
+add_executable(rational rational.cpp rational.hpp templateTest.cpp)
