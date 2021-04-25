@@ -25,6 +25,18 @@ int main() {
     std::cout << fib_loop(10) << std::endl;
     std::cout << fib_loop(25) << std::endl;
 
+    //  How large an n can you calculate the Fibonacci sequence for?
+    int term = 0;
+    for (term = 0; term < 50; term++) {
+        // #45 = 1134903170
+        // #46 = 1836311903 (largest value)
+        // #47 = -1323752223 (overflow)
+        // #48 = 512559680
+        // #49 = -811192543
+        std::cout << "#" << term << " = ";
+        std::cout << fib_loop(term) << std::endl;
+    }
+
     std::cout << ">> ack(m, n) where m = [0,3]; n = [1,4]: " << std::endl;
 
     std::cout << ack(0, 1) << std::endl;
