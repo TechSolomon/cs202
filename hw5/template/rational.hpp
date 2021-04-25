@@ -1,4 +1,4 @@
-// rational.cpp
+// rational.hpp
 // Solomon Himelbloom
 // 23 April 2021
 // Template rational class (header file) example for CS 202.
