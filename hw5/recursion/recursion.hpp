@@ -10,6 +10,6 @@ int fib(int n);
 
 int fib_loop(int n);
 
-int ack(int n, int o);
+int ack(int m, int n);
 
 #endif //RECURSION_RECURSION_HPP

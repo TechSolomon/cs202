@@ -9,7 +9,7 @@
 int main() {
     std::cout << "Hello, recursion! (program #3)." << std::endl;
 
-    std::cout << ">> fib(n): " << std::endl;
+    std::cout << ">> fib(0, 1, 2, 10, 25): " << std::endl;
 
     // 0
     std::cout << fib(0) << std::endl;
@@ -26,7 +26,22 @@ int main() {
     // 25
     std::cout << fib(25) << std::endl;
 
-    std::cout << ">> fib_loop(n): " << std::endl;
+    std::cout << ">> fib_loop(0, 1, 2, 10, 25): " << std::endl;
+
+    // 0
+    std::cout << fib_loop(0) << std::endl;
+
+    // 1
+    std::cout << fib_loop(1) << std::endl;
+
+    // 2
+    std::cout << fib_loop(2) << std::endl;
+
+    // 10
+    std::cout << fib_loop(10) << std::endl;
+
+    // 25
+    std::cout << fib_loop(25) << std::endl;
 
     std::cout << ">> ack(n): " << std::endl;
     return 0;
