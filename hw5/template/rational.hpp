@@ -65,14 +65,12 @@ private:
 };
 
 template<typename A>
-Rational<A>::Rational() {
-    
+Rational<A>::Rational():_numerator(0), _denominator(1) {
+
 }
 
 template<typename A>
-Rational<A>::~Rational(){
-
-}
+Rational<A>::~Rational()= default;
 
 template <typename A>
 std::ostream &operator<<(std::ostream &os, const Rational<A> &rhs) {
