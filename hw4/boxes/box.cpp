@@ -28,10 +28,15 @@ using std::string;
 using std::unique_ptr;
 using std::vector;
 
-Box::Box() = default;
+Box::Box() {
+    _width = 1;
+    _height = 1;
+}
 
 Box::Box(const int &x, const int &y) : _width(x), _height(y) {
     cout << "Box default constructor!" << endl;
+    _width = x;
+    _height = y;
 }
 
 int Box::getHeight() const {
@@ -56,11 +61,11 @@ void Box::setWidth(const int &x) {
 }
 
 // START: FilledBox
-FilledBox::FilledBox(): Box(1, 1) {
+FilledBox::FilledBox(): Box() {
 
 }
 
-FilledBox::FilledBox(const int &x, const int &y) {
+FilledBox::FilledBox(const int &x, const int &y): Box(x, y) {
 
 }
 
@@ -79,11 +84,11 @@ string FilledBox::type() const {
 }
 
 // START: HollowBox
-HollowBox::HollowBox(): Box(1, 1) {
+HollowBox::HollowBox(): Box() {
 
 }
 
-HollowBox::HollowBox(const int &x, const int &y) {
+HollowBox::HollowBox(const int &x, const int &y) : Box (x, y) {
 
 }
 
@@ -106,11 +111,11 @@ string HollowBox::type() const {
 }
 
 // START: CheckeredBox
-CheckeredBox::CheckeredBox(): Box(1, 1) {
+CheckeredBox::CheckeredBox(): Box() {
 
 }
 
-CheckeredBox::CheckeredBox(const int &x, const int &y) {
+CheckeredBox::CheckeredBox(const int &x, const int &y): Box(x, y) {
 
 }
 
