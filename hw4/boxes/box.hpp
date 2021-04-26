@@ -58,8 +58,8 @@ class FilledBox : public Box {
 public:
     FilledBox();
     FilledBox(const int &h, const int &w);
-    virtual void print(ostream &os) const override;
-    virtual string type() const override;
+    void print(ostream &os) const override;
+    [[nodiscard]] string type() const override;
 private:
 };
 
@@ -67,8 +67,8 @@ class HollowBox : public Box {
 public:
     HollowBox();
     HollowBox(const int &h, const int &w);
-    virtual void print(ostream &os) const override;
-    virtual string type() const override;
+    void print(ostream &os) const override;
+    [[nodiscard]] string type() const override;
 private:
 };
 
@@ -76,8 +76,8 @@ class CheckeredBox : public Box {
 public:
     CheckeredBox();
     CheckeredBox(const int &h, const int &w);
-    virtual void print(ostream &os) const override;
-    virtual string type() const override;
+    void print(ostream &os) const override;
+    [[nodiscard]] string type() const override;
 private:
 };
 
