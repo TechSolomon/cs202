@@ -62,4 +62,6 @@ public:
 private:
 };
 
+unique_ptr<Box> boxFactory(char c, int w, int h);
+
 #endif //BOXES_BOX_HPP

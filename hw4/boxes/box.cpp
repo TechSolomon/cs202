@@ -31,11 +31,6 @@ using std::string;
 using std::unique_ptr;
 using std::vector;
 
-int main() {
-    cout << "Hello, boxes!" << endl;
-    return 0;
-}
-
 int Box::getHeight() const {
     cout << "Height = " << _height << endl;
     return 0;
@@ -60,4 +55,9 @@ void Box::setHeight(int h) {
 
 void Box::setWidth(int w) {
     cout << "Setting the current width." << endl;
+}
+
+int main() {
+    cout << "Hello, boxes!" << endl;
+    return 0;
 }

@@ -3,4 +3,4 @@ project(boxes)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(boxes box.cpp box.hpp)
+add_executable(boxes box.cpp box.hpp boxtest3.cpp)
