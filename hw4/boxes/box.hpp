@@ -34,16 +34,21 @@ using std::vector;
 #define BOXES_BOX_HPP
 
 class Box {
-    friend ostream operator<<(ostream &os, const Box &b);
+    friend ostream &operator<<(ostream &os, const Box & Dimensions);
 public:
     Box();
-    Box(int h, int w);
+    Box(const int &h, const int &w);
 
     [[nodiscard]] int getHeight() const;
     [[nodiscard]] int getWidth() const;
 
     void setHeight(int h) const;
     void setWidth(int w) const;
+
+    virtual void print(ostream &os) const = 0;
+    [[nodiscard]] virtual string type() const = 0;
+
+    virtual ~Box() = default;
 private:
     int _height{};
     int _width{};
@@ -53,6 +58,8 @@ class FilledBox : public Box {
 public:
     FilledBox();
     FilledBox(const int &h, const int &w);
+    virtual void print(ostream &os) const override;
+    virtual string type() const override;
 private:
 };
 
@@ -60,6 +67,8 @@ class HollowBox : public Box {
 public:
     HollowBox();
     HollowBox(const int &h, const int &w);
+    virtual void print(ostream &os) const override;
+    virtual string type() const override;
 private:
 };
 
@@ -67,6 +76,8 @@ class CheckeredBox : public Box {
 public:
     CheckeredBox();
     CheckeredBox(const int &h, const int &w);
+    virtual void print(ostream &os) const override;
+    virtual string type() const override;
 private:
 };
 

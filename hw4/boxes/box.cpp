@@ -36,11 +36,18 @@ int Box::getWidth() const {
     return  _width;
 }
 
-Box::Box() {
-    cout << "Box base constructor!" << endl;
+ostream &operator<<(ostream &os, const Box &b) {
+    b.print(os);
+    return os;
 }
 
-Box::Box(int h, int w) {
+Box::Box() {
+    cout << "Box base constructor!" << endl;
+    _height = 0;
+    _width = 0;
+}
+
+Box::Box(const int &h, const int &w) {
     cout << "Box default constructor!" << endl;
 }
 
@@ -54,17 +61,7 @@ void Box::setWidth(int w) const {
     w = _width;
 }
 
-ostream operator<<(ostream &os, const Box &b) {
-    return std::ostream(nullptr);
-}
-
-//FilledBox::FilledBox() = default;
-//
-//HollowBox::HollowBox() = default;
-//
-//CheckeredBox::CheckeredBox() = default;
-
-FilledBox::FilledBox(): Box(4,3) {
+FilledBox::FilledBox(): Box() {
 
 }
 
@@ -72,7 +69,20 @@ FilledBox::FilledBox(const int &h, const int &w) {
 
 }
 
-HollowBox::HollowBox(): Box(5,10) {
+void FilledBox::print(ostream &os) const {
+    for (int f = 0; f < getWidth(); f++) {
+        for (int g = 0; getHeight(); g++) {
+            os << "";
+        }
+        os << "\n";
+    }
+}
+
+string FilledBox::type() const {
+    return "Test";
+}
+
+HollowBox::HollowBox(): Box() {
 
 }
 
@@ -80,7 +90,15 @@ HollowBox::HollowBox(const int &h, const int &w) {
 
 }
 
-CheckeredBox::CheckeredBox(): Box(4,4) {
+void HollowBox::print(ostream &os) const {
+
+}
+
+string HollowBox::type() const {
+    return "Test";
+}
+
+CheckeredBox::CheckeredBox(): Box() {
 
 }
 
@@ -88,7 +106,14 @@ CheckeredBox::CheckeredBox(const int &h, const int &w) {
 
 }
 
-int main() {
-    cout << "Hello, boxes!" << endl;
-    return 0;
+void CheckeredBox::print(ostream &os) const {
+
+}
+
+string CheckeredBox::type() const {
+    return "Test";
+}
+
+unique_ptr<Box> boxFactory(char c, int w, int h) {
+    return nullptr;
 }
