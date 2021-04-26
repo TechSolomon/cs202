@@ -70,8 +70,8 @@ FilledBox::FilledBox(const int &h, const int &w) {
 }
 
 void FilledBox::print(ostream &os) const {
-    for (int f = 0; f < getWidth(); f++) {
-        for (int g = 0; getHeight(); g++) {
+    for (int f = 0; f < getHeight(); f++) {
+        for (int g = 0; getWidth(); g++) {
             os << "x";
         }
         os << "\n";
@@ -91,7 +91,16 @@ HollowBox::HollowBox(const int &h, const int &w) {
 }
 
 void HollowBox::print(ostream &os) const {
-
+    for (int f = 0; f < getWidth(); f++) {
+        for (int g = 0; getHeight(); g++) {
+            if (f == -1 + getHeight() || g == -1 + getWidth() || f == 0 || g == 0) {
+                os << "x";
+            } else {
+                os << " ";
+            }
+            os << "\n";
+        }
+    }
 }
 
 string HollowBox::type() const {
