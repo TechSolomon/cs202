@@ -5,13 +5,10 @@
 
 #include "box.hpp"
 #include <iostream>
-#include <stdio.h>
-#include <string>
 #include <map>
 #include <vector>
 #include <algorithm>
 #include <fstream>
-#include <iomanip>
 #include <stdexcept>
 using std::cin;
 using std::cout;
@@ -32,13 +29,11 @@ using std::unique_ptr;
 using std::vector;
 
 int Box::getHeight() const {
-    cout << "Height = " << _height << endl;
-    return 0;
+    return _height;
 }
 
 int Box::getWidth() const {
-    cout << "Width = " << _width << endl;
-    return 0;
+    return  _width;
 }
 
 Box::Box() {
@@ -49,12 +44,48 @@ Box::Box(int h, int w) {
     cout << "Box default constructor!" << endl;
 }
 
-void Box::setHeight(int h) {
+void Box::setHeight(int h) const {
     cout << "Setting the current height." << endl;
+    h = _height;
 }
 
-void Box::setWidth(int w) {
+void Box::setWidth(int w) const {
     cout << "Setting the current width." << endl;
+    w = _width;
+}
+
+ostream operator<<(ostream &os, const Box &b) {
+    return std::ostream(nullptr);
+}
+
+//FilledBox::FilledBox() = default;
+//
+//HollowBox::HollowBox() = default;
+//
+//CheckeredBox::CheckeredBox() = default;
+
+FilledBox::FilledBox(): Box(4,3) {
+
+}
+
+FilledBox::FilledBox(const int &h, const int &w) {
+
+}
+
+HollowBox::HollowBox(): Box(5,10) {
+
+}
+
+HollowBox::HollowBox(const int &h, const int &w) {
+
+}
+
+CheckeredBox::CheckeredBox(): Box(4,4) {
+
+}
+
+CheckeredBox::CheckeredBox(const int &h, const int &w) {
+
 }
 
 int main() {

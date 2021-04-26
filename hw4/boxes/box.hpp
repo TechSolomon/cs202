@@ -21,6 +21,7 @@ using std::make_unique;
 using std::map;
 using std::move;
 using std::ofstream;
+using std::ostream;
 using std::reverse;
 using std::runtime_error;
 using std::shared_ptr;
@@ -33,32 +34,39 @@ using std::vector;
 #define BOXES_BOX_HPP
 
 class Box {
+    friend ostream operator<<(ostream &os, const Box &b);
 public:
     Box();
     Box(int h, int w);
 
-    int getHeight() const;
-    int getWidth() const;
+    [[nodiscard]] int getHeight() const;
+    [[nodiscard]] int getWidth() const;
 
-    void setHeight(int h);
-    void setWidth(int w);
+    void setHeight(int h) const;
+    void setWidth(int w) const;
 private:
-    int _height;
-    int _width;
+    int _height{};
+    int _width{};
 };
 
 class FilledBox : public Box {
 public:
+    FilledBox();
+    FilledBox(const int &h, const int &w);
 private:
 };
 
 class HollowBox : public Box {
 public:
+    HollowBox();
+    HollowBox(const int &h, const int &w);
 private:
 };
 
 class CheckeredBox : public Box {
 public:
+    CheckeredBox();
+    CheckeredBox(const int &h, const int &w);
 private:
 };
 
