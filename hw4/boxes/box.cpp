@@ -28,6 +28,12 @@ using std::string;
 using std::unique_ptr;
 using std::vector;
 
+Box::Box() = default;
+
+Box::Box(const int &y, const int &x) : _height(y), _width(x) {
+    cout << "Box default constructor!" << endl;
+}
+
 int Box::getHeight() const {
     return _height;
 }
@@ -41,27 +47,15 @@ ostream &operator<<(ostream &os, const Box &b) {
     return os;
 }
 
-Box::Box() {
-    cout << "Box base constructor!" << endl;
-    _height = 0;
-    _width = 0;
+void Box::setHeight(int y) {
+    _height = y;
 }
 
-Box::Box(const int &h, const int &w) {
-    cout << "Box default constructor!" << endl;
+void Box::setWidth(int x) {
+    _width = x;
 }
 
-void Box::setHeight(int h) const {
-    cout << "Setting the current height." << endl;
-    h = _height;
-}
-
-void Box::setWidth(int w) const {
-    cout << "Setting the current width." << endl;
-    w = _width;
-}
-
-FilledBox::FilledBox(): Box() {
+FilledBox::FilledBox(): Box(1, 1) {
 
 }
 
@@ -82,7 +76,7 @@ string FilledBox::type() const {
     return ">> Filled Box";
 }
 
-HollowBox::HollowBox(): Box() {
+HollowBox::HollowBox(): Box(1, 1) {
 
 }
 
@@ -91,9 +85,9 @@ HollowBox::HollowBox(const int &h, const int &w) {
 }
 
 void HollowBox::print(ostream &os) const {
-    for (int f = 0; f < getWidth(); f++) {
-        for (int g = 0; getHeight(); g++) {
-            if (f == -1 + getHeight() || g == -1 + getWidth() || f == 0 || g == 0) {
+    for (int h = 0; h < getWidth(); h++) {
+        for (int i = 0; getHeight(); i++) {
+            if (h == -1 + getHeight() || i == -1 + getWidth() || h == 0 || i == 0) {
                 os << "x";
             } else {
                 os << " ";
@@ -107,7 +101,7 @@ string HollowBox::type() const {
     return ">> Hollow Box";
 }
 
-CheckeredBox::CheckeredBox(): Box() {
+CheckeredBox::CheckeredBox(): Box(1, 1) {
 
 }
 
@@ -116,7 +110,12 @@ CheckeredBox::CheckeredBox(const int &h, const int &w) {
 }
 
 void CheckeredBox::print(ostream &os) const {
-
+    for (int c = 0; c < getHeight(); c++) {
+        for (int d = 0; getWidth(); d++) {
+            os << "x";
+        }
+        os << "\n";
+    }
 }
 
 string CheckeredBox::type() const {

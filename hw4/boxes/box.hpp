@@ -42,8 +42,8 @@ public:
     [[nodiscard]] int getHeight() const;
     [[nodiscard]] int getWidth() const;
 
-    void setHeight(int h) const;
-    void setWidth(int w) const;
+    void setHeight(int h);
+    void setWidth(int w);
 
     virtual void print(ostream &os) const = 0;
     [[nodiscard]] virtual string type() const = 0;
