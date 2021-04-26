@@ -72,14 +72,14 @@ FilledBox::FilledBox(const int &h, const int &w) {
 void FilledBox::print(ostream &os) const {
     for (int f = 0; f < getWidth(); f++) {
         for (int g = 0; getHeight(); g++) {
-            os << "";
+            os << "x";
         }
         os << "\n";
     }
 }
 
 string FilledBox::type() const {
-    return "Test";
+    return ">> Filled Box";
 }
 
 HollowBox::HollowBox(): Box() {
@@ -95,7 +95,7 @@ void HollowBox::print(ostream &os) const {
 }
 
 string HollowBox::type() const {
-    return "Test";
+    return ">> Hollow Box";
 }
 
 CheckeredBox::CheckeredBox(): Box() {
@@ -111,9 +111,22 @@ void CheckeredBox::print(ostream &os) const {
 }
 
 string CheckeredBox::type() const {
-    return "Test";
+    return ">> Checkered Box";
 }
 
 unique_ptr<Box> boxFactory(char c, int w, int h) {
-    return nullptr;
+    unique_ptr<Box> drawing;
+    switch (c) {
+        case 'f':
+            drawing = make_unique<FilledBox>(w, h);
+            return drawing;
+        case 'h':
+            drawing = make_unique<HollowBox>(w, h);
+            return drawing;
+        case 'c':
+            drawing = make_unique<CheckeredBox>(w, h);
+            return drawing;
+        default:
+            throw runtime_error(">> ERROR: Invalid parameters. Please try again.");
+    }
 }
