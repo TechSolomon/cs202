@@ -30,7 +30,7 @@ using std::vector;
 
 Box::Box() = default;
 
-Box::Box(const int &y, const int &x) : _height(y), _width(x) {
+Box::Box(const int &x, const int &y) : _width(x), _height(y) {
     cout << "Box default constructor!" << endl;
 }
 
@@ -47,19 +47,20 @@ ostream &operator<<(ostream &os, const Box &b) {
     return os;
 }
 
-void Box::setHeight(int y) {
+void Box::setHeight(const int &y) {
     _height = y;
 }
 
-void Box::setWidth(int x) {
+void Box::setWidth(const int &x) {
     _width = x;
 }
 
+// START: FilledBox
 FilledBox::FilledBox(): Box(1, 1) {
 
 }
 
-FilledBox::FilledBox(const int &h, const int &w) {
+FilledBox::FilledBox(const int &x, const int &y) {
 
 }
 
@@ -72,15 +73,17 @@ void FilledBox::print(ostream &os) const {
     }
 }
 
+// END: FilledBox
 string FilledBox::type() const {
-    return ">> Filled Box";
+    return "Filled";
 }
 
+// START: HollowBox
 HollowBox::HollowBox(): Box(1, 1) {
 
 }
 
-HollowBox::HollowBox(const int &h, const int &w) {
+HollowBox::HollowBox(const int &x, const int &y) {
 
 }
 
@@ -97,29 +100,36 @@ void HollowBox::print(ostream &os) const {
     }
 }
 
+// END: HollowBox
 string HollowBox::type() const {
-    return ">> Hollow Box";
+    return "Hollow";
 }
 
+// START: CheckeredBox
 CheckeredBox::CheckeredBox(): Box(1, 1) {
 
 }
 
-CheckeredBox::CheckeredBox(const int &h, const int &w) {
+CheckeredBox::CheckeredBox(const int &x, const int &y) {
 
 }
 
 void CheckeredBox::print(ostream &os) const {
-    for (int c = 0; c < getHeight(); c++) {
-        for (int d = 0; getWidth(); d++) {
-            os << "x";
+    for (int c = 0; c < getWidth(); c++) {
+        for (int d = 0; getHeight(); d++) {
+            if (d % 2 == c % 2) {
+                os << "x";
+            } else {
+                os << " ";
+            }
+            os << "\n";
         }
-        os << "\n";
     }
 }
 
+// END: CheckeredBox
 string CheckeredBox::type() const {
-    return ">> Checkered Box";
+    return "Checkered";
 }
 
 unique_ptr<Box> boxFactory(char c, int w, int h) {

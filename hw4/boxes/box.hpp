@@ -37,13 +37,13 @@ class Box {
     friend ostream &operator<<(ostream &os, const Box & Dimensions);
 public:
     Box();
-    Box(const int &h, const int &w);
+    Box(const int &w, const int &h);
 
     [[nodiscard]] int getHeight() const;
     [[nodiscard]] int getWidth() const;
 
-    void setHeight(int h);
-    void setWidth(int w);
+    void setHeight(const int &h);
+    void setWidth(const int &w);
 
     virtual void print(ostream &os) const = 0;
     [[nodiscard]] virtual string type() const = 0;
@@ -57,7 +57,7 @@ private:
 class FilledBox : public Box {
 public:
     FilledBox();
-    FilledBox(const int &h, const int &w);
+    FilledBox(const int &w, const int &h);
     void print(ostream &os) const override;
     [[nodiscard]] string type() const override;
 private:
@@ -66,7 +66,7 @@ private:
 class HollowBox : public Box {
 public:
     HollowBox();
-    HollowBox(const int &h, const int &w);
+    HollowBox(const int &w, const int &h);
     void print(ostream &os) const override;
     [[nodiscard]] string type() const override;
 private:
@@ -75,7 +75,7 @@ private:
 class CheckeredBox : public Box {
 public:
     CheckeredBox();
-    CheckeredBox(const int &h, const int &w);
+    CheckeredBox(const int &w, const int &h);
     void print(ostream &os) const override;
     [[nodiscard]] string type() const override;
 private:
